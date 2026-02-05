@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-void main() {
+import 'package:my_app_25_26/services/service_storage.dart';
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await ServiceStorage.instance.init();
   runApp(const MyApp());
 }
 
