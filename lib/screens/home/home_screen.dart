@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'package:my_app_25_26/core/constants/app_strings.dart';
+import 'package:my_app_25_26/core/constants/app_colors.dart';
+
+class HomeScreen extends StatelessWidget{
+  const HomeScreen ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(AppStrings.appName),
+        backgroundColor: AppColors.primary,
+      ),
+      body: Center(
+        child: Text(
+          'Ecran Accueil',
+          style: TextStyle(
+            fontSize: 24,
+            color: AppColors.textPrimary
+          ),
+        ),
+
+      ),
+
+    );
+  }
+
+}
