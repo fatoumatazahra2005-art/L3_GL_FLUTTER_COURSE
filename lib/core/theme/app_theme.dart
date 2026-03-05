@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:my_app_25_26/core/constants/app_colors.dart';
+import 'package:SunuTask/core/constants/app_colors.dart';
 
 class AppTheme{
   AppTheme._();

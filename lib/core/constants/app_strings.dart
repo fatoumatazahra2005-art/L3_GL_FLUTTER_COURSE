@@ -15,7 +15,9 @@ class AppStrings {
       'L\'avancement de vos projets en temps reel. ';
 
   static const String onboardingTitle3 = 'Restez organise';
-  
+  static const String onboardingDesc3 = 'Definissez des priorites , des deadlines et ne manquez '
+  'plus jamais une echeance importante.';
+
 
 
 }

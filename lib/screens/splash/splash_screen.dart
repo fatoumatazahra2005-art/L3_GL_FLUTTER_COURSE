@@ -2,11 +2,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:my_app_25_26/core/constants/app_strings.dart';
-import 'package:my_app_25_26/core/constants/app_colors.dart';
-import 'package:my_app_25_26/services/service_storage.dart';
-import 'package:my_app_25_26/screens/home/home_screen.dart';
-import 'package:my_app_25_26/screens/onboarding/onboarding_screen.dart';
+import 'package:SunuTask/core/constants/app_strings.dart';
+import 'package:SunuTask/core/constants/app_colors.dart';
+import 'package:SunuTask/services/service_storage.dart';
+import 'package:SunuTask/screens/home/home_screen.dart';
+import 'package:SunuTask/screens/onboarding/onboarding_screen.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -50,44 +50,31 @@ class _SplashScreenState extends State<SplashScreen> {
   void _startTimer(){
     _timer = Timer(Duration(seconds: 3),_navigateToNextScreen);
   }
+  void _navigateToNextScreen() {
+    if (!mounted) return;
 
-  void _navigateToNextScreen(){
-
-    if(!mounted) return ;
-    final bool onboardingComplete = ServiceStorage.instance.isOnboardingComplete;
-    //Navigator.pushReplacement(context,
-       // MaterialPageRoute<void>(
-           // builder: (context)  => onboardingComplete
-           // ? const HomeScreen() : const OnboardingScreen(),
-       // ),
-    //);
+    final bool onboardingComplete =
+        ServiceStorage.instance.isOnboardingComplete;
 
     Navigator.pushReplacement(
       context,
       PageRouteBuilder(
-          pageBuilder:(context , animation , secondaryAnimation) =>
-          onboardingComplete
-          ? const HomeScreen() : const OnboardingScreen(),
-          transitionsBuilder: (context , animation,secondaryAnimation , child){
-            return FadeTransition(
-                opacity: animation,
-              child: child,
-            );
-          },
-          transitionDuration: (Duration(milliseconds: 300)
-
-
-      )
-
-
-
-
-    )
-
-
-
-
+        pageBuilder: (context, animation, secondaryAnimation) =>
+        onboardingComplete
+            ? const HomeScreen()
+            : const OnboardingScreen(),
+        transitionsBuilder:
+            (context, animation, secondaryAnimation, child) {
+          return FadeTransition(
+            opacity: animation,
+            child: child,
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 300),
+      ),
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(

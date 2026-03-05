@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app_25_26/core/theme/app_theme.dart';
-import 'package:my_app_25_26/services/service_storage.dart';
-import 'package:my_app_25_26/screens/splash/splash_screen.dart';
+import 'package:SunuTask/core/theme/app_theme.dart';
+import 'package:SunuTask/services/service_storage.dart';
+import 'package:SunuTask/screens/splash/splash_screen.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await ServiceStorage.instance.init();
